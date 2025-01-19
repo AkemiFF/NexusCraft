@@ -1,8 +1,8 @@
 "use client"
 
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { motion } from "framer-motion"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Code2, Laptop, Users, Sparkles, Rocket, Shield } from "lucide-react"
+import { Code2, Laptop, Rocket, Shield, Sparkles, Users } from "lucide-react"
 
 const services = [
   {
@@ -39,7 +39,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-20">
+    <section className="py-20" id="services">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

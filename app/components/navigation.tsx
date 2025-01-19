@@ -1,8 +1,8 @@
 'use client'
 
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Code2 } from 'lucide-react'
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 const menuItems = [
   { name: "Home", href: "#home" },
@@ -22,16 +22,18 @@ export function Navigation() {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <motion.div 
+          <motion.div
             className="flex items-center gap-2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <Code2 className="w-6 h-6 text-primary-foreground" />
+            <div className="w-full h-14 bg-primary rounded-lg flex items-center justify-center">
+              {/* <Code2 className="w-6 h-6 text-primary-foreground" /> */}
+              <img src="/logo.png" alt="logo" className="w-full h-16 object-cover" />
             </div>
-            <span className="font-bold text-xl">NexusCraft</span>
+            {/* <span className="font-bold text-xl">NexusCraft</span> */}
+
           </motion.div>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -49,10 +51,11 @@ export function Navigation() {
               </motion.a>
             ))}
           </nav>
-
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-            Get in Touch
-          </Button>
+          <Link href={"#contact"}>
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              Get in Touch
+            </Button>
+          </Link>
         </div>
       </div>
     </motion.header>

@@ -1,34 +1,38 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 const projects = [
   {
-    title: "E-commerce Platform",
+    title: "ShopLG",
     description: "A fully responsive e-commerce solution with advanced filtering and search capabilities.",
-    image: "/placeholder.svg?height=300&width=400",
-    tags: ["Next.js", "Tailwind CSS", "Stripe"],
+    image: "/shoplg.png?height=300&width=400",
+    tags: ["Next.js", "Django", "Tailwind CSS", "Stripe"],
+    link: 'https://shoplg.online/users',
   },
   {
-    title: "Health & Fitness App",
+    title: "Portfolio",
     description: "Mobile-first application for tracking workouts, nutrition, and personal health goals.",
-    image: "/placeholder.svg?height=300&width=400",
-    tags: ["React Native", "Firebase", "HealthKit"],
+    image: "/nexus.png?height=300&width=400",
+    tags: ["Next.js"],
+    link: '',
   },
   {
-    title: "Financial Dashboard",
-    description: "Real-time financial data visualization tool for investors and analysts.",
-    image: "/placeholder.svg?height=300&width=400",
-    tags: ["Vue.js", "D3.js", "Node.js"],
+    title: "Aftrip",
+    description: "Aftrip is a tourist destination platform for those seeking authentic and responsible experiences, aiming to promote the cultural richness of each region, facilitating the discovery of hidden treasures, whether unique hotels, exceptional artisanal products or trips organized by local experts.  ",
+    image: "/aftrip.png?height=300&width=400",
+    tags: ["Next.js", "D3.js", "Node.js"],
+    link: 'https://craft-aftrip.com/',
   },
 ]
 
 export default function Projects() {
   return (
-    <section className="py-20">
+    <section className="py-20" id={"projects"}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -64,9 +68,11 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-                <Button variant="ghost" className="text-primary hover:text-primary/80">
-                  View Project <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
+                <Link href={project.link}>
+                  <Button variant="ghost" className="text-primary hover:text-primary/80">
+                    View Project <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           </motion.div>

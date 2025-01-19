@@ -1,15 +1,15 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Mail, Phone, MapPin } from "lucide-react"
+import { motion } from "framer-motion"
+import { Mail, MapPin, Phone } from "lucide-react"
 
 export default function Contact() {
   return (
-    <section className="py-20">
+    <section className="py-20" id="contact" >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -32,15 +32,15 @@ export default function Contact() {
             <CardContent className="space-y-4">
               <div className="flex items-center gap-4">
                 <Mail className="text-primary" />
-                <span className="text-gray-200">contact@nexuscraft.com</span>
+                <span className="text-gray-200">tanosama0ii@gmail.com</span>
               </div>
               <div className="flex items-center gap-4">
                 <Phone className="text-primary" />
-                <span className="text-gray-200">+1 (555) 123-4567</span>
+                <span className="text-gray-200">+261 38 10 323 34</span>
               </div>
               <div className="flex items-center gap-4">
                 <MapPin className="text-primary" />
-                <span className="text-gray-200">123 Tech Street, San Francisco, CA 94105</span>
+                <span className="text-gray-200">Lot 75H Ambohibao, Ambohijanahary, Tana</span>
               </div>
             </CardContent>
           </Card>

@@ -34,7 +34,7 @@ const teamMembers = [
 
 export default function Team() {
   return (
-    <section className="py-20 bg-black/30">
+    <section className="py-20 bg-black/30" id="about">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
