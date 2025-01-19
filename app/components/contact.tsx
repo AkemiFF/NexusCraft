@@ -1,11 +1,9 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import { motion } from "framer-motion"
 import { Mail, MapPin, Phone } from "lucide-react"
+import ContactForm from "./contact-form"
 
 export default function Contact() {
   return (
@@ -47,13 +45,7 @@ export default function Contact() {
         </motion.div>
 
         <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}>
-          <form className="space-y-6">
-            <Input placeholder="Your Name" />
-            <Input type="email" placeholder="Your Email" />
-            <Input placeholder="Subject" />
-            <Textarea placeholder="Your Message" className="min-h-[150px]" />
-            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">Send Message</Button>
-          </form>
+          <ContactForm />
         </motion.div>
       </div>
     </section>
