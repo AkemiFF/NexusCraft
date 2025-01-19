@@ -13,13 +13,14 @@ export async function POST(req) {
                 pass: process.env.EMAIL_PASS, // Mot de passe ou clé d'application
             },
         });
+        const sub = `${name},\n ${message}`;
 
         // Définir le contenu de l'email
         const mailOptions = {
             from: `"${name}" <${email}>`,
             to: process.env.EMAIL_USER, // Adresse email du destinataire
-            subject: subject,
-            text: message,
+            subject: email + subject,
+            text: sub,
         };
 
         // Envoyer l'email
