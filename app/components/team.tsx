@@ -1,30 +1,34 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { motion } from "framer-motion"
 import { Github, Linkedin, Twitter } from "lucide-react"
+import Link from "next/link"
 
 const teamMembers = [
   {
-    name: "Alex Johnson",
-    role: "Founder & CEO",
-    image: "/placeholder.svg?height=300&width=300",
-    bio: "Tech visionary with 15+ years of experience in web development and digital strategy.",
+    name: "Jason Brad Mirado",
+    role: "Founder & Full Stack Developer",
+    image: "/mirado.jpg?height=300&width=300",
+    bio: "Tech visionary with 5+ years of experience in web development and digital strategy.",
     social: { github: "#", linkedin: "#", twitter: "#" },
+    portfolio: 'https://brad-akemi.onrender.com/',
   },
   {
-    name: "Sarah Lee",
-    role: "Lead Designer",
-    image: "/placeholder.svg?height=300&width=300",
+    name: "Riantsoa Chérica",
+    role: "Backend Developer",
+    image: "/cherica.webp?height=300&width=300",
     bio: "Award-winning UX/UI designer passionate about creating intuitive digital experiences.",
     social: { github: "#", linkedin: "#", twitter: "#" },
+    portfolio: 'https://cherica.vercel.app/',
   },
   {
-    name: "Mike Chen",
-    role: "Senior Developer",
-    image: "/placeholder.svg?height=300&width=300",
+    name: "Léomyre",
+    role: "Full-stack Developer",
+    image: "/leomyre.jpg?height=300&width=300",
     bio: "Full-stack developer specializing in scalable architecture and performance optimization.",
     social: { github: "#", linkedin: "#", twitter: "#" },
+    portfolio: 'https://leomyre.onrender.com/',
   },
 ]
 
@@ -52,11 +56,14 @@ export default function Team() {
             transition={{ duration: 0.3, delay: index * 0.1 }}
           >
             <Card className="bg-black/50 border-primary/20 hover:border-primary/40 transition-colors overflow-hidden">
-              <img src={member.image || "/placeholder.svg"} alt={member.name} className="w-full h-64 object-cover" />
-              <CardHeader>
-                <CardTitle className="text-white">{member.name}</CardTitle>
-                <CardDescription className="text-gray-200">{member.role}</CardDescription>
-              </CardHeader>
+              <Link href={member.portfolio}>
+
+                <img src={member.image || "/placeholder.svg"} alt={member.name} className="w-full h-80 object-cover" />
+                <CardHeader>
+                  <CardTitle className="text-white">{member.name}</CardTitle>
+                  <CardDescription className="text-gray-200">{member.role}</CardDescription>
+                </CardHeader>
+              </Link>
               <CardContent>
                 <p className="text-gray-200 mb-4">{member.bio}</p>
                 <div className="flex gap-4">
