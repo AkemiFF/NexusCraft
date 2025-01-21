@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import Head from 'next/head'
 import Footer from './components/footer'
 import HomePage from './components/home'
 import MatrixRain from './components/matrix-rain'
@@ -26,14 +27,20 @@ const Homepage = (
   // }
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden relative">
-      <MatrixRain />
-      <div className="relative z-10">
-        <Navigation />
-        <HomePage />
-        <Footer />
+    <>
+      <Head>
+        <title>NexusCraft</title>
+        <meta name="description" content="NexusCraft" />
+      </Head>
+      <div className="min-h-screen bg-black text-white overflow-hidden relative">
+        <MatrixRain />
+        <div className="relative z-10">
+          <Navigation />
+          <HomePage />
+          <Footer />
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

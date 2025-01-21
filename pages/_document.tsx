@@ -39,7 +39,6 @@ class MyDocument extends Document<Props> {
             href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Oswald:600"
             rel="stylesheet"
           />
-          <title>NexusCraft</title>
           <link
             data-react-helmet="true"
             rel="icon"
