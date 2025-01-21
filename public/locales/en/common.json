@@ -1,0 +1,52 @@
+{
+    "title": "NexusCraft - Digital Innovation Agency",
+    "description": "Crafting exceptional digital experiences",
+    "nav": {
+        "home": "Home",
+        "services": "Services",
+        "projects": "Projects",
+        "about": "About",
+        "contact": "Contact"
+    },
+    "hero": {
+        "subtitle": "Digital Innovation Agency",
+        "title": "Crafting Digital Excellence",
+        "description": "NexusCraft is a premier web development agency specializing in creating exceptional digital experiences. We transform ideas into powerful, scalable web solutions.",
+        "cta": {
+            "start": "Start Your Project",
+            "view": "View Our Work"
+        },
+        "imageAlt": "NexusCraft Projects Showcase"
+    },
+    "stats": {
+        "projects": "Projects Delivered",
+        "satisfaction": "Client Satisfaction",
+        "developers": "Expert Developers"
+    },
+    "services": {
+        "title": "Our Services",
+        "description": "We offer a comprehensive suite of digital services to help your business thrive in the modern web landscape."
+    },
+    "projects": {
+        "title": "Our Projects",
+        "description": "Explore our portfolio of innovative digital solutions that have helped businesses thrive in the digital landscape."
+    },
+    "team": {
+        "title": "Meet Our Team",
+        "description": "Our diverse team of experts is passionate about crafting exceptional digital experiences."
+    },
+    "contact": {
+        "title": "Get in Touch",
+        "description": "Ready to start your next project? Contact us for a free consultation.",
+        "form": {
+            "name": "Your Name",
+            "email": "Your Email",
+            "subject": "Subject",
+            "message": "Your Message",
+            "submit": "Send Message"
+        }
+    },
+    "footer": {
+        "copyright": "© 2024 NexusCraft. All rights reserved."
+    }
+}

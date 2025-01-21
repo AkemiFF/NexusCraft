@@ -1,0 +1,51 @@
+{
+    "title": "NexusCraft - Agence d'Innovation Numérique",
+    "description": "Création d'expériences numériques exceptionnelles",
+    "nav": {
+        "home": "Accueil",
+        "services": "Services",
+        "projects": "Projets",
+        "about": "À propos",
+        "contact": "Contact"
+    },
+    "hero": {
+        "subtitle": "Agence d'Innovation Numérique",
+        "title": "Créer l'Excellence Numérique",
+        "description": "NexusCraft est une agence de développement web de premier plan spécialisée dans la création d'expériences numériques exceptionnelles. Nous transformons les idées en solutions web puissantes et évolutives.",
+        "cta": {
+            "start": "Démarrer Votre Projet",
+            "view": "Voir Nos Travaux"
+        }
+    },
+    "stats": {
+        "projects": "Projets livrés",
+        "satisfaction": "Satisfaction client",
+        "developers": "Développeurs experts"
+    },
+    "services": {
+        "title": "Nos Services",
+        "description": "Nous offrons une gamme complète de services numériques pour aider votre entreprise à prospérer dans le paysage web moderne."
+    },
+    "projects": {
+        "title": "Nos Projets",
+        "description": "Explorez notre portfolio de solutions numériques innovantes qui ont aidé les entreprises à prospérer dans le paysage numérique."
+    },
+    "team": {
+        "title": "Rencontrez Notre Équipe",
+        "description": "Notre équipe diversifiée d'experts est passionnée par la création d'expériences numériques exceptionnelles."
+    },
+    "contact": {
+        "title": "Contactez-nous",
+        "description": "Prêt à démarrer votre prochain projet ? Contactez-nous pour une consultation gratuite.",
+        "form": {
+            "name": "Votre Nom",
+            "email": "Votre Email",
+            "subject": "Sujet",
+            "message": "Votre Message",
+            "submit": "Envoyer le Message"
+        }
+    },
+    "footer": {
+        "copyright": "© 2024 NexusCraft. Tous droits réservés."
+    }
+}
