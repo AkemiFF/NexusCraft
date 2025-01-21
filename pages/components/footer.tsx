@@ -1,6 +1,6 @@
 import { Facebook } from "lucide-react"
 
-export function Footer() {
+export default function Footer() {
   return (
     <footer className="bg-black/30 border-t border-primary/10 py-8 mt-20">
       <div className="container mx-auto px-4">
