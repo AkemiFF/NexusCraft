@@ -1,3 +1,5 @@
+"use client"
+
 import { AnimatePresence, motion } from "framer-motion"
 import { ChevronDown } from "lucide-react"
 import { useTranslation } from "next-i18next"
@@ -30,8 +32,8 @@ const LanguageSwitcher = () => {
         onClick={() => setIsOpen(!isOpen)}
         className="bg-primary hover:bg-primary/90 text-primary-foreground flex items-center gap-2"
       >
-        {languages.find((lang) => lang.code === i18n.language)?.flag}
-        <span>{i18n.language.toUpperCase()}</span>
+        {languages.find((lang) => lang.code === (i18n.language ?? "en"))?.flag ?? "🌐"}
+        <span>{i18n.language?.toUpperCase() ?? "EN"}</span>
         <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </Button>
       <AnimatePresence>
