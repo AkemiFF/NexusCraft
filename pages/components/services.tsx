@@ -9,39 +9,39 @@ import { Card, CardDescription, CardHeader, CardTitle } from "../../components/u
 
 export default function Services() {
   const { t } = useTranslation("common");
-
   const services = [
     {
       icon: Code2,
-      title: "Web Development",
-      description: "Custom web applications built with cutting-edge technologies and best practices.",
+      title: t('services.webDevelopment.title', 'Web Development'),
+      description: t('services.webDevelopment.description', 'Custom web applications built with cutting-edge technologies and best practices.'),
     },
     {
       icon: Laptop,
-      title: "UI/UX Design",
-      description: "Intuitive and engaging user interfaces that deliver exceptional user experiences.",
+      title: t('services.uiUxDesign.title', 'UI/UX Design'),
+      description: t('services.uiUxDesign.description', 'Intuitive and engaging user interfaces that deliver exceptional user experiences.'),
     },
     {
       icon: Shield,
-      title: "Security Solutions",
-      description: "Robust security implementations to protect your digital assets and data.",
+      title: t('services.securitySolutions.title', 'Security Solutions'),
+      description: t('services.securitySolutions.description', 'Robust security implementations to protect your digital assets and data.'),
     },
     {
       icon: Rocket,
-      title: "Performance Optimization",
-      description: "Speed optimization and performance tuning for lightning-fast applications.",
+      title: t('services.performanceOptimization.title', 'Performance Optimization'),
+      description: t('services.performanceOptimization.description', 'Speed optimization and performance tuning for lightning-fast applications.'),
     },
     {
       icon: Users,
-      title: "Team Augmentation",
-      description: "Skilled developers ready to join your team and accelerate your projects.",
+      title: t('services.teamAugmentation.title', 'Team Augmentation'),
+      description: t('services.teamAugmentation.description', 'Skilled developers ready to join your team and accelerate your projects.'),
     },
     {
       icon: Sparkles,
-      title: "Digital Innovation",
-      description: "Innovative solutions that keep you ahead of the digital curve.",
+      title: t('services.digitalInnovation.title', 'Digital Innovation'),
+      description: t('services.digitalInnovation.description', 'Innovative solutions that keep you ahead of the digital curve.'),
     },
   ]
+
   return (
     <section className="py-20" id="services">
       <motion.div
