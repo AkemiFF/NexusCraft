@@ -1,36 +1,39 @@
 "use client"
 
-import { Button } from "../../components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../components/ui/card"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
+import { useTranslation } from "react-i18next"
+import { Button } from "../../components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../components/ui/card"
 
-const projects = [
-  {
-    title: "ShopLG",
-    description: "A fully responsive e-commerce solution with advanced filtering and search capabilities.",
-    image: "/shoplg.png?height=300&width=400",
-    tags: ["Next.js", "Django", "Tailwind CSS", "Stripe"],
-    link: 'https://shoplg.online/users',
-  },
-  {
-    title: "Portfolio",
-    description: "Mobile-first application for tracking workouts, nutrition, and personal health goals.",
-    image: "/nexus.png?height=300&width=400",
-    tags: ["Next.js"],
-    link: '',
-  },
-  {
-    title: "Aftrip",
-    description: "Aftrip is a tourist destination platform for those seeking authentic and responsible experiences, aiming to promote the cultural richness of each region, facilitating the discovery of hidden treasures, whether unique hotels, exceptional artisanal products or trips organized by local experts.  ",
-    image: "/aftrip.png?height=300&width=400",
-    tags: ["Next.js", "D3.js", "Node.js"],
-    link: 'https://craft-aftrip.com/',
-  },
-]
 
 export default function Projects() {
+  const { t, i18n } = useTranslation('common')
+
+  const projects = [
+    {
+      title: t('projects.shoplg.title'),
+      description: t('projects.shoplg.description'),
+      image: "/shoplg.png?height=300&width=400",
+      tags: ["Next.js", "Django", "Tailwind CSS", "Stripe"],
+      link: 'https://shoplg.online/users',
+    },
+    {
+      title: t('projects.portfolio.title'),
+      description: t('projects.portfolio.description'),
+      image: "/nexus.png?height=300&width=400",
+      tags: ["Next.js"],
+      link: '',
+    },
+    {
+      title: t('projects.aftrip.title'),
+      description: t('projects.aftrip.description'),
+      image: "/aftrip.png?height=300&width=400",
+      tags: ["Next.js", "D3.js", "Node.js"],
+      link: 'https://craft-aftrip.com/',
+    },
+  ]
   return (
     <section className="py-20" id={"projects"}>
       <motion.div
@@ -39,10 +42,9 @@ export default function Projects() {
         transition={{ duration: 0.5 }}
         className="text-center mb-12"
       >
-        <h2 className="text-3xl font-bold mb-4">Our Projects</h2>
+        <h2 className="text-3xl font-bold mb-4">{t('projects.title')}</h2>
         <p className="text-gray-300 max-w-2xl mx-auto">
-          Explore our portfolio of innovative digital solutions that have helped businesses thrive in the digital
-          landscape.
+          {t('projects.description')}
         </p>
       </motion.div>
 
@@ -63,14 +65,14 @@ export default function Projects() {
               <CardContent>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">
+                    <span key={tag} className="bg-primary/10 text-yellow-200 border-yellow-200 text-primary text-xs px-2 py-1 rounded-full">
                       {tag}
                     </span>
                   ))}
                 </div>
                 <Link href={project.link}>
-                  <Button variant="ghost" className="text-primary hover:text-primary/80">
-                    View Project <ArrowRight className="w-4 h-4 ml-2" />
+                  <Button variant="ghost" className="text-primary text-white hover:text-primary/80">
+                    {t('hero.cta.view')}<ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </Link>
               </CardContent>
