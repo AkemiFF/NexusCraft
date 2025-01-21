@@ -1,9 +1,9 @@
 "use client"
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { motion } from "framer-motion"
-import { Github, Linkedin, Twitter } from "lucide-react"
+import { Github, Linkedin, X } from "lucide-react"
 import Link from "next/link"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../components/ui/card"
 
 const teamMembers = [
   {
@@ -11,7 +11,9 @@ const teamMembers = [
     role: "Founder & Full Stack Developer",
     image: "/mirado.jpg?height=300&width=300",
     bio: "Tech visionary with 5+ years of experience in web development and digital strategy.",
-    social: { github: "#", linkedin: "#", twitter: "#" },
+    social: {
+      github: "https://github.com/AkemiFF", linkedin: "#", twitter: "https://x.com/BradMirado?t=1buX1YjI0kMEuHQReqebaw&s=09"
+    },
     portfolio: 'https://brad-akemi.onrender.com/',
   },
   {
@@ -19,7 +21,9 @@ const teamMembers = [
     role: "Backend Developer",
     image: "/cherica.webp?height=300&width=300",
     bio: "Award-winning UX/UI designer passionate about creating intuitive digital experiences.",
-    social: { github: "#", linkedin: "#", twitter: "#" },
+    social: {
+      github: "https://github.com/cherica01", linkedin: "www.linkedin.com/in/riantsoa-cherica-88740a303", twitter: "#"
+    },
     portfolio: 'https://cherica.vercel.app/',
   },
   {
@@ -27,7 +31,7 @@ const teamMembers = [
     role: "Full-stack Developer",
     image: "/leomyre.jpg?height=300&width=300",
     bio: "Full-stack developer specializing in scalable architecture and performance optimization.",
-    social: { github: "#", linkedin: "#", twitter: "#" },
+    social: { github: "https://github.com/Leomyre", linkedin: "#", twitter: "#" },
     portfolio: 'https://leomyre.onrender.com/',
   },
 ]
@@ -74,7 +78,7 @@ export default function Team() {
                     <Linkedin className="w-5 h-5" />
                   </a>
                   <a href={member.social.twitter} className="text-gray-400 hover:text-primary transition-colors">
-                    <Twitter className="w-5 h-5" />
+                    <X className="w-5 h-5" />
                   </a>
                 </div>
               </CardContent>
