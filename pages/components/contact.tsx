@@ -32,15 +32,15 @@ export default function Contact() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center gap-4">
-                <Mail className="text-primary" />
+                <Mail className="text-blue-500" />
                 <span className="text-gray-200">tanosama0ii@gmail.com</span>
               </div>
               <div className="flex items-center gap-4">
-                <Phone className="text-primary" />
+                <Phone className=" text-blue-500" />
                 <span className="text-gray-200">+261 38 10 323 34</span>
               </div>
               <div className="flex items-center gap-4">
-                <MapPin className="text-primary" />
+                <MapPin className="text-blue-500" />
                 <span className="text-gray-200">Lot 75H Ambohibao, Ambohijanahary, Tana</span>
               </div>
             </CardContent>

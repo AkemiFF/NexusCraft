@@ -86,12 +86,21 @@ export default function Team() {
                   <a href={member.social.github} className="text-gray-400 hover:text-primary transition-colors">
                     <Github className="w-5 h-5" />
                   </a>
-                  <a href={member.social.linkedin} className="text-gray-400 hover:text-primary transition-colors">
-                    <Linkedin className="w-5 h-5" />
-                  </a>
-                  <a href={member.social.twitter} className="text-gray-400 hover:text-primary transition-colors">
-                    <X className="w-5 h-5" />
-                  </a>
+                  {
+                    member.social.linkedin != "#" ?
+                      (<a href={member.social.linkedin} className="text-gray-400 hover:text-primary transition-colors">
+                        <Linkedin className="w-5 h-5" />
+                      </a>) :
+                      null
+                  }
+                  {
+                    member.social.twitter != "#" ?
+                      (<a href={member.social.twitter} className="text-gray-400 hover:text-primary transition-colors">
+                        <X className="w-5 h-5" />
+                      </a>) :
+                      null
+                  }
+
                 </div>
               </CardContent>
             </Card>

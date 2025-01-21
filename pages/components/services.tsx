@@ -66,7 +66,7 @@ export default function Services() {
           >
             <Card className="bg-black/50 border-primary/20 hover:border-primary/40 transition-colors">
               <CardHeader>
-                <service.icon className="w-12 h-12 text-primary mb-4" />
+                <service.icon className="w-12 h-12 text-blue-500 mb-4" />
                 <CardTitle className="text-white">{service.title}</CardTitle>
                 <CardDescription className="text-gray-200">{service.description}</CardDescription>
               </CardHeader>
