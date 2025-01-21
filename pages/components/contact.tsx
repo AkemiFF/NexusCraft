@@ -1,6 +1,6 @@
 "use client"
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../components/ui/card"
 import { motion } from "framer-motion"
 import { Mail, MapPin, Phone } from "lucide-react"
 import ContactForm from "./contact-form"
