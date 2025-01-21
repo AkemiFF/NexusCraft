@@ -13,7 +13,7 @@ const nextConfig = {
   },
 
   i18n: {
-    locales: ['en', 'fr'], // Define all supported locales
+    locales: ['en', 'fr', 'zh', 'es'], // Define all supported locales
     defaultLocale: 'en',   // Set the default locale
   },
   reactStrictMode: true,
