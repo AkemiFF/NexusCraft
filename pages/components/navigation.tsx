@@ -1,18 +1,34 @@
-'use client'
-
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { useTranslation } from 'next-i18next';
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { Button } from "../../components/ui/button";
 
-const menuItems = [
-  { name: "Home", href: "#home" },
-  { name: "Services", href: "#services" },
-  { name: "Projects", href: "#projects" },
-  { name: "About", href: "#about" },
-  { name: "Contact", href: "#contact" }
-];
 
-export function Navigation() {
+export default function Navigation() {
+  const [menuItems, setMenuItems] = useState<any[]>([]);
+  const router = useRouter()
+  const { t, i18n } = useTranslation('common');
+
+  const menu = [
+    { name: t('nav.home'), href: "#home" },
+    { name: t('nav.services'), href: "#services" },
+    { name: t('nav.projects'), href: "#projects" },
+    { name: t('nav.about'), href: "#about" },
+    { name: t('nav.contact'), href: "#contact" }
+  ]
+  useEffect(() => {
+    setMenuItems(menu);
+  }, []);
+
+  const toggleLanguage = () => {
+    const newLocale = i18n.resolvedLanguage === 'en' ? 'fr' : 'en'
+    i18n.changeLanguage(newLocale)
+    router.push(router.pathname, router.asPath, { locale: newLocale })
+  }
+
+
   return (
     <motion.header
       className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-md border-b border-primary/10"
@@ -52,8 +68,8 @@ export function Navigation() {
             ))}
           </nav>
           <Link href={"#contact"}>
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              Get in Touch
+            <Button onClick={toggleLanguage} className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              {i18n.resolvedLanguage === 'en' ? 'FR' : 'EN'}
             </Button>
           </Link>
         </div>
