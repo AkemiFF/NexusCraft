@@ -1,33 +1,80 @@
-import { motion } from "framer-motion";
-import { useTranslation } from 'next-i18next';
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { Button } from "../../components/ui/button";
+import { AnimatePresence, motion } from "framer-motion"
+import { ChevronDown } from "lucide-react"
+import { useTranslation } from "next-i18next"
+import { useRouter } from "next/router"
+import { useEffect, useState } from "react"
+import { Button } from "../../components/ui/button"
 
-
-export default function Navigation() {
-  const [menuItems, setMenuItems] = useState<any[]>([]);
+const LanguageSwitcher = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const { i18n } = useTranslation()
   const router = useRouter()
-  const { t, i18n } = useTranslation('common');
 
-  const menu = [
-    { name: t('nav.home'), href: "#home" },
-    { name: t('nav.services'), href: "#services" },
-    { name: t('nav.projects'), href: "#projects" },
-    { name: t('nav.about'), href: "#about" },
-    { name: t('nav.contact'), href: "#contact" }
+  const languages = [
+    { code: "en", name: "English", flag: "🇬🇧" },
+    { code: "fr", name: "Français", flag: "🇫🇷" },
+    { code: "zh", name: "中文", flag: "🇨🇳" },
+    { code: "es", name: "Español", flag: "🇪🇸" }
   ]
-  useEffect(() => {
-    setMenuItems(menu);
-  }, []);
 
-  const toggleLanguage = () => {
-    const newLocale = i18n.resolvedLanguage === 'en' ? 'fr' : 'en'
-    i18n.changeLanguage(newLocale)
-    router.push(router.pathname, router.asPath, { locale: newLocale })
+
+  const changeLanguage = (lang: string) => {
+    i18n.changeLanguage(lang)
+    router.push(router.pathname, router.asPath, { locale: lang })
+    setIsOpen(false)
   }
 
+  return (
+    <div className="relative">
+      <Button
+        onClick={() => setIsOpen(!isOpen)}
+        className="bg-primary hover:bg-primary/90 text-primary-foreground flex items-center gap-2"
+      >
+        {languages.find((lang) => lang.code === i18n.language)?.flag}
+        <span>{i18n.language.toUpperCase()}</span>
+        <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+      </Button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg overflow-hidden z-50"
+          >
+            {languages.map((lang) => (
+              <motion.button
+                key={lang.code}
+                onClick={() => changeLanguage(lang.code)}
+                className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-2"
+                whileHover={{ backgroundColor: "#f3f4f6" }}
+              >
+                <span>{lang.flag}</span>
+                <span>{lang.name}</span>
+              </motion.button>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  )
+}
+
+export default function Navigation() {
+  const [menuItems, setMenuItems] = useState<any[]>([])
+  const router = useRouter()
+  const { t, i18n } = useTranslation("common")
+
+  useEffect(() => {
+    const menu = [
+      { name: t("nav.home"), href: "#home" },
+      { name: t("nav.services"), href: "#services" },
+      { name: t("nav.projects"), href: "#projects" },
+      { name: t("nav.about"), href: "#about" },
+      { name: t("nav.contact"), href: "#contact" },
+    ]
+    setMenuItems(menu)
+  }, [t, i18n.language])
 
   return (
     <motion.header
@@ -49,7 +96,6 @@ export default function Navigation() {
               <img src="/logo.png" alt="logo" className="w-full h-16 object-cover" />
             </div>
             {/* <span className="font-bold text-xl">NexusCraft</span> */}
-
           </motion.div>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -67,11 +113,7 @@ export default function Navigation() {
               </motion.a>
             ))}
           </nav>
-          <Link href={"#contact"}>
-            <Button onClick={toggleLanguage} className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              {i18n.resolvedLanguage === 'en' ? 'FR' : 'EN'}
-            </Button>
-          </Link>
+          <LanguageSwitcher />
         </div>
       </div>
     </motion.header>
