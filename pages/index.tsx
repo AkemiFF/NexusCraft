@@ -1,7 +1,5 @@
 import type { GetServerSideProps, InferGetStaticPropsType } from 'next'
-import { useRouter } from 'next/router'
 
-import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import Footer from './components/footer'
@@ -18,8 +16,8 @@ type Props = {
 const Homepage = (
   _props: InferGetStaticPropsType<typeof getServerSideProps>
 ) => {
-  const router = useRouter()
-  const { t, i18n } = useTranslation('common')
+  // const router = useRouter()
+  // const { t, i18n } = useTranslation('common')
   // const toggleLanguage = () => {
   //   const newLocale = i18n.resolvedLanguage === 'en' ? 'fr' : 'en'
   //   i18n.changeLanguage(newLocale)
