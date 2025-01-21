@@ -21,21 +21,23 @@ export default function MatrixRain() {
     const characters = '01'
 
     function draw() {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
+      if (ctx && canvas) {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'
+        ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-      ctx.fillStyle = 'rgba(0, 230, 150, 0.25)' // More subtle green color
-      ctx.font = '15px monospace'
+        ctx.fillStyle = 'rgba(0, 230, 150, 0.25)' // More subtle green color
+        ctx.font = '15px monospace'
 
-      for (let i = 0; i < drops.length; i++) {
-        const text = characters[Math.floor(Math.random() * characters.length)]
-        ctx.fillText(text, i * 20, drops[i] * 20)
+        for (let i = 0; i < drops.length; i++) {
+          const text = characters[Math.floor(Math.random() * characters.length)]
+          ctx.fillText(text, i * 20, drops[i] * 20)
 
-        if (drops[i] * 20 > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0
+          if (drops[i] * 20 > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0
+          }
+
+          drops[i]++
         }
-
-        drops[i]++
       }
     }
 
@@ -57,7 +59,7 @@ export default function MatrixRain() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full opacity-30"
+      className="fixed top-0 left-0 w-full h-full opacity-55"
     />
   )
 }
