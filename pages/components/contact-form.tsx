@@ -1,12 +1,15 @@
 "use client"
 
+import { useState } from "react"
+import { useTranslation } from "react-i18next"
 import { Button } from "../../components/ui/button"
 import { Input } from "../../components/ui/input"
 import { Textarea } from "../../components/ui/textarea"
-import { useState } from "react"
 import { useToast } from "../../hooks/use-toast"
 
 export default function ContactForm() {
+  const { t } = useTranslation('common')
+
   const { toast } = useToast()
   const [formData, setFormData] = useState({
     name: "",
@@ -59,7 +62,7 @@ export default function ContactForm() {
       <Input
         type="text"
         name="name"
-        placeholder="Your Name"
+        placeholder={t("contact.form.name")}
         className="bg-gray-800"
         value={formData.name}
         onChange={handleChange}
@@ -68,7 +71,7 @@ export default function ContactForm() {
       <Input
         type="email"
         name="email"
-        placeholder="Your Email"
+        placeholder={t("contact.form.email")}
         className="bg-gray-800"
         value={formData.email}
         onChange={handleChange}
@@ -77,7 +80,7 @@ export default function ContactForm() {
       <Input
         type="text"
         name="subject"
-        placeholder="Subject"
+        placeholder={t("contact.form.subject")}
         className="bg-gray-800"
         value={formData.subject}
         onChange={handleChange}
@@ -85,14 +88,14 @@ export default function ContactForm() {
       />
       <Textarea
         name="message"
-        placeholder="Your Message"
+        placeholder={t("contact.form.message")}
         className="min-h-[150px] bg-gray-800"
         value={formData.message}
         onChange={handleChange}
         required
       />
       <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-        Send Message
+        {t("contact.form.submit")}
       </Button>
     </form>
   )
