@@ -3,40 +3,52 @@
 import { motion } from "framer-motion"
 import { Github, Linkedin, X } from "lucide-react"
 import Link from "next/link"
+import { useTranslation } from "react-i18next"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../components/ui/card"
 
-const teamMembers = [
-  {
-    name: "Jason Brad Mirado",
-    role: "Founder & Full Stack Developer",
-    image: "/mirado.jpg?height=300&width=300",
-    bio: "Tech visionary with 5+ years of experience in web development and digital strategy.",
-    social: {
-      github: "https://github.com/AkemiFF", linkedin: "#", twitter: "https://x.com/BradMirado?t=1buX1YjI0kMEuHQReqebaw&s=09"
-    },
-    portfolio: 'https://brad-akemi.onrender.com/',
-  },
-  {
-    name: "Riantsoa Chérica",
-    role: "Backend Developer",
-    image: "/cherica.webp?height=300&width=300",
-    bio: "Award-winning UX/UI designer passionate about creating intuitive digital experiences.",
-    social: {
-      github: "https://github.com/cherica01", linkedin: "www.linkedin.com/in/riantsoa-cherica-88740a303", twitter: "#"
-    },
-    portfolio: 'https://cherica.vercel.app/',
-  },
-  {
-    name: "Léomyre",
-    role: "Full-stack Developer",
-    image: "/leomyre.jpg?height=300&width=300",
-    bio: "Full-stack developer specializing in scalable architecture and performance optimization.",
-    social: { github: "https://github.com/Leomyre", linkedin: "#", twitter: "#" },
-    portfolio: 'https://leomyre.onrender.com/',
-  },
-]
 
 export default function Team() {
+  const { t, i18n } = useTranslation('common');
+
+
+  const teamMembers = [
+    {
+      name: t('team.mirado.name'),
+      role: t('team.mirado.role'),
+      image: "/mirado.jpg?height=300&width=300",
+      bio: t('team.mirado.bio'),
+      social: {
+        github: "https://github.com/AkemiFF",
+        linkedin: "https://www.linkedin.com/in/mirado-ake-b348b7309/",
+        twitter: "https://x.com/BradMirado?t=1buX1YjI0kMEuHQReqebaw&s=09"
+      },
+      portfolio: 'https://brad-akemi.onrender.com/',
+    },
+    {
+      name: t('team.cherica.name'),
+      role: t('team.cherica.role'),
+      image: "/cherica.webp?height=300&width=300",
+      bio: t('team.cherica.bio'),
+      social: {
+        github: "https://github.com/cherica01",
+        linkedin: "www.linkedin.com/in/riantsoa-cherica-88740a303",
+        twitter: "#"
+      },
+      portfolio: 'https://cherica.vercel.app/',
+    },
+    {
+      name: t('team.leomyre.name'),
+      role: t('team.leomyre.role'),
+      image: "/leomyre.jpg?height=300&width=300",
+      bio: t('team.leomyre.bio'),
+      social: {
+        github: "https://github.com/Leomyre",
+        linkedin: "#",
+        twitter: "#"
+      },
+      portfolio: 'https://leomyre.onrender.com/',
+    },
+  ]
   return (
     <section className="py-20 bg-black/30" id="about">
       <motion.div
@@ -45,9 +57,9 @@ export default function Team() {
         transition={{ duration: 0.5 }}
         className="text-center mb-12"
       >
-        <h2 className="text-3xl font-bold mb-4">Meet Our Team</h2>
+        <h2 className="text-3xl font-bold mb-4"> {t('team.title')}</h2>
         <p className="text-gray-200 max-w-2xl mx-auto">
-          Our diverse team of experts is passionate about crafting exceptional digital experiences.
+          {t("team.description")}
         </p>
       </motion.div>
 
